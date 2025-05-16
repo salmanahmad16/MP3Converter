@@ -1,0 +1,401 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Free YouTube to MP3 Converter - Convert YouTube videos to high-quality MP3 files. No ads, easy to use, and completely free.">
+    <meta name="keywords" content="youtube to mp3, youtube converter, mp3 converter, youtube downloader, audio converter, free mp3 converter, online mp3 converter, download youtube audio">
+    <meta name="robots" content="index, follow">
+    <meta name="author" content="YouTube to MP3 Converter">
+    <meta property="og:title" content="YouTube to MP3 Converter - Free Online Tool">
+    <meta property="og:description" content="Convert YouTube videos to high-quality MP3 files for free. No ads, no registration required.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://youtubetomp3converter.com">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="YouTube to MP3 Converter - Free Online Tool">
+    <meta name="twitter:description" content="Convert YouTube videos to high-quality MP3 files for free. No ads, no registration required.">
+    <title>YouTube to MP3 Converter - Free Online Tool | No Ads</title>
+    <link rel="stylesheet" href="/static/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <!-- Google Fonts for better typography -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+    <!-- Preload critical resources for faster loading -->
+    <link rel="preload" href="/static/style.css" as="style">
+    <link rel="preload" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" as="style">
+    
+    <!-- Structured data for better SEO -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "WebApplication",
+      "name": "YouTube to MP3 Converter",
+      "url": "https://youtubetomp3converter.com",
+      "description": "Free online tool to convert YouTube videos to high-quality MP3 files. No ads, easy to use, and completely free.",
+      "applicationCategory": "MultimediaApplication",
+      "operatingSystem": "Any",
+      "offers": {
+        "@type": "Offer",
+        "price": "0",
+        "priceCurrency": "USD"
+      }
+    }
+    </script>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1><i class="fas fa-music"></i> YouTube to MP3 Converter</h1>
+            <p>Free YouTube to MP3 Converter – High Quality, No Ads, Easy & Fast</p>
+        </header>
+
+        <div class="support-section">
+            <p>Buy me a Coffee to help me keep this website ad-free</p>
+            <a href="https://ko-fi.com/caffeinatedcat" target="_blank" class="btn-support">
+                <i class="fas fa-coffee"></i> Buy Me a Coffee
+            </a>
+        </div>
+
+        <div class="error-message" id="error-message"></div>
+
+        <main>
+            <div class="converter-box">
+                <h2>Convert YouTube to MP3</h2>
+                <div class="input-group">
+                    <input type="text" id="youtube-url" placeholder="Paste YouTube URL here..." aria-label="YouTube video URL">
+                    <button id="convert-btn" aria-label="Convert video to MP3">Convert</button>
+                    <button id="clear-btn" class="btn-secondary" aria-label="Clear input field">
+                        <i class="fas fa-times"></i> Clear
+                    </button>
+                </div>
+                <div class="quality-options">
+                    <label for="quality-select">Audio Quality:</label>
+                    <select id="quality-select" aria-label="Select audio quality">
+                        <option value="192">High (192kbps)</option>
+                        <option value="128" selected>Standard (128kbps)</option>
+                        <option value="64">Low (64kbps)</option>
+                    </select>
+                </div>
+            </div>
+
+            <div class="progress-container hidden">
+                <div class="progress-info">
+                    <div class="progress-header">
+                        <h3 id="video-title">Converting...</h3>
+                    </div>
+                    <div class="progress-bar">
+                        <div class="progress-fill" id="progress-fill"></div>
+                    </div>
+                    <div class="progress-details">
+                        <span id="progress-percent">0%</span>
+                        <span id="time-remaining">--:--</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="download-complete hidden">
+                <div class="success-message">
+                    <i class="fas fa-check-circle"></i>
+                    <h3>Conversion Complete!</h3>
+                    <p>Your MP3 file is ready to download</p>
+                    <div class="button-group">
+                        <a id="download-link" class="download-btn" href="#" aria-label="Download MP3 file">
+                            Download MP3
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="how-it-works">
+                <h2><i class="fas fa-question-circle"></i> How It Works</h2>
+                <ol>
+                    <li>Paste a YouTube video URL in the box above</li>
+                    <li>Click the "Convert" button</li>
+                    <li>Wait for the conversion to complete</li>
+                    <li>Download your MP3 file</li>
+                </ol>
+            </div>
+            
+            <div class="seo-content">
+                <h2>The Best Free YouTube to MP3 Converter</h2>
+                <p>Our YouTube to MP3 converter is a free online tool that allows you to convert YouTube videos to high-quality MP3 files in just a few clicks. No registration, no ads, and no software installation required.</p>
+                
+                <h3>Why Choose Our YouTube to MP3 Converter?</h3>
+                <ul>
+                    <li><strong>Fast Conversion:</strong> Our converter processes your videos quickly, so you don't have to wait long.</li>
+                    <li><strong>High-Quality Audio:</strong> Choose between different audio qualities up to 192kbps for the best listening experience.</li>
+                    <li><strong>No Registration Required:</strong> No need to create an account or provide personal information.</li>
+                    <li><strong>Ad-Free Experience:</strong> Enjoy a clean, ad-free interface without any distractions.</li>
+                    <li><strong>Simple to Use:</strong> Just paste the YouTube URL, click convert, and download your MP3.</li>
+                </ul>
+                
+                <h3>How to Convert YouTube to MP3</h3>
+                <p>Converting YouTube videos to MP3 with our tool is simple:</p>
+                <ol>
+                    <li>Copy the URL of the YouTube video you want to convert</li>
+                    <li>Paste the URL into the input field at the top of this page</li>
+                    <li>Select your preferred audio quality (High, Standard, or Low)</li>
+                    <li>Click the "Convert" button and wait for the conversion to complete</li>
+                    <li>Click the "Download MP3" button to save the file to your device</li>
+                </ol>
+                
+                <h3>Legal Use of YouTube to MP3 Converter</h3>
+                <p>Please note that our YouTube to MP3 converter should only be used to download content that you have the right to download. This includes videos that are in the public domain, videos that you have created yourself, or videos where the creator has given permission to download. Downloading copyrighted content without permission may violate YouTube's Terms of Service and copyright laws.</p>
+            </div>
+
+            <section class="support-section">
+                <h3>Support This Project</h3>
+                <p>Enjoying this free tool? Support further development by buying me a coffee</p>
+                <a href="https://ko-fi.com/caffeinatedcat" target="_blank" class="btn-support">
+                    <i class="fas fa-coffee"></i> Buy Me a Coffee
+                </a>
+            </section>
+        </main>
+
+        <footer>
+            <p>© 2025 YouTube to MP3 Converter. All rights reserved.</p>
+            <p>This tool is provided for educational and personal use only.</p>
+            <nav class="footer-nav">
+                <a href="#">Privacy Policy</a>
+                <a href="#">Terms of Service</a>
+                <a href="#">Contact Us</a>
+            </nav>
+        </footer>
+    </div>
+
+
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const convertBtn = document.getElementById('convert-btn');
+            const youtubeUrl = document.getElementById('youtube-url');
+            const progressContainer = document.querySelector('.progress-container');
+            const downloadComplete = document.querySelector('.download-complete');
+            const videoTitle = document.getElementById('video-title');
+            const progressFill = document.getElementById('progress-fill');
+            const progressPercent = document.getElementById('progress-percent');
+            // File size display removed
+            const timeRemaining = document.getElementById('time-remaining');
+            const downloadLink = document.getElementById('download-link');
+            const qualitySelect = document.getElementById('quality-select');
+            const errorMessage = document.getElementById('error-message');
+
+            // Event listeners
+            convertBtn.addEventListener('click', convertToMp3);
+            youtubeUrl.addEventListener('keypress', function(e) {
+                if (e.key === 'Enter') convertToMp3();
+            });
+            
+            // Add event listener for the main clear button
+            const clearBtn = document.getElementById('clear-btn');
+            if (clearBtn) { // Check if the button exists
+                clearBtn.addEventListener('click', function() {
+                    youtubeUrl.value = '';
+                    youtubeUrl.focus();
+                    hideError();
+                    // Also hide the download complete section if visible
+                    downloadComplete.classList.add('hidden');
+                });
+            }
+            
+            // Convert Next button has been removed
+
+            // Fetch video info before conversion
+            async function fetchVideoInfo(url) {
+                try {
+                    const response = await fetch('/fetch-info', {
+                        method: 'POST',
+                        headers: {
+                            'Content-Type': 'application/json',
+                        },
+                        body: JSON.stringify({ url: url })
+                    });
+                    
+                    if (!response.ok) {
+                        const errorData = await response.json();
+                        throw new Error(errorData.error || 'Failed to fetch video info');
+                    }
+                    
+                    return await response.json();
+                } catch (error) {
+                    throw error;
+                }
+            }
+            
+            // Main conversion function
+            async function convertToMp3() {
+                const url = youtubeUrl.value.trim();
+
+                if (!url) {
+                    showError('Please enter a YouTube URL');
+                    return;
+                }
+
+                if (!isValidYouTubeUrl(url)) {
+                    showError('Please enter a valid YouTube URL');
+                    return;
+                }
+
+                // UI updates
+                hideError();
+                progressContainer.classList.remove('hidden');
+                downloadComplete.classList.add('hidden');
+                videoTitle.textContent = "Fetching video info...";
+                convertBtn.disabled = true;
+
+                try {
+                    // First fetch video info
+                    const infoResponse = await fetchVideoInfo(url);
+                    
+                    if (infoResponse.error) {
+                        showError(infoResponse.error);
+                        return;
+                    }
+                    
+                    // Update UI with video title
+                    videoTitle.textContent = infoResponse.title || "Unknown Title";
+                    
+                    // Format duration if available
+                    let durationText = "";
+                    if (infoResponse.duration) {
+                        const minutes = Math.floor(infoResponse.duration / 60);
+                        const seconds = infoResponse.duration % 60;
+                        durationText = ` (${minutes}:${seconds < 10 ? '0' : ''}${seconds})`;
+                    }
+                    
+                    // Start the conversion process with the task_id from info fetch
+                    const response = await startConversion(url, qualitySelect.value, infoResponse.task_id);
+
+                    if (response.error) {
+                        showError(response.error);
+                        return;
+                    }
+
+                    // Poll for progress updates
+                    await trackProgress(response.task_id);
+
+                } catch (error) {
+                    showError('An error occurred: ' + error.message);
+                    console.error('Conversion error:', error);
+                } finally {
+                    convertBtn.disabled = false;
+                }
+            }
+
+            // Start the conversion process
+            async function startConversion(url, quality, task_id = null) {
+                const payload = {
+                    url: url,
+                    quality: quality
+                };
+                
+                // Include task_id if provided
+                if (task_id) {
+                    payload.task_id = task_id;
+                }
+                
+                const response = await fetch('/convert', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json',
+                    },
+                    body: JSON.stringify(payload)
+                });
+                
+                if (!response.ok) {
+                    const errorData = await response.json();
+                    throw new Error(errorData.error || 'Conversion failed');
+                }
+                
+                return await response.json();
+            }
+
+            // Track conversion progress
+            async function trackProgress(taskId) {
+                let progressData;
+
+                do {
+                    // Get progress updates
+                    const response = await fetch(`/progress/${taskId}`);
+                    progressData = await response.json();
+
+                    if (progressData.error) {
+                        showError(progressData.error);
+                        return;
+                    }
+
+                    // Update progress UI
+                    updateProgressUI(progressData);
+
+                    // Wait before polling again
+                    await new Promise(resolve => setTimeout(resolve, 1000));
+
+                } while (progressData.status !== 'completed' && progressData.status !== 'error');
+
+                if (progressData.status === 'completed') {
+                    // Conversion complete - pass the taskId to the handler
+                    downloadCompleteHandler(progressData, taskId);
+                } else if (progressData.status === 'error') {
+                    showError(progressData.error || 'Conversion failed');
+                }
+            }
+
+            // Update progress UI
+            function updateProgressUI(data) {
+                // Ensure progress is a number
+                const progress = typeof data.progress === 'number' ? data.progress : 0;
+                progressFill.style.width = `${progress}%`;
+                progressPercent.textContent = `${Math.round(progress)}%`;
+
+                // Update title if available but don't overwrite if we already have a title
+                if (data.title && videoTitle.textContent === "Converting...") {
+                    videoTitle.textContent = data.title;
+                }
+
+              
+
+                // Display ETA if available
+                if (data.eta) {
+                    timeRemaining.textContent = data.eta;
+                }
+            }
+
+            // Handle download completion
+            function downloadCompleteHandler(data, taskId) {
+                progressContainer.classList.add('hidden');
+                downloadComplete.classList.remove('hidden');
+
+                if (data.filename) {
+                    // Fix: Use task_id for the download URL instead of filename
+                    downloadLink.href = `/download/${taskId}`;
+                    downloadLink.download = data.filename;
+                    videoTitle.textContent = data.filename || "Your Audio File";
+                    
+                    // Convert Next button has been removed
+                } else {
+                    showError('Conversion completed but no file was generated');
+                }
+            }
+
+            // Helper functions
+            function isValidYouTubeUrl(url) {
+                const pattern = /^(https?:\/\/)?(www\.)?(youtube\.com|youtu\.?be)\/.+$/;
+                return pattern.test(url);
+            }
+
+            function showError(message) {
+                errorMessage.textContent = message;
+                errorMessage.style.display = 'block';
+                progressContainer.classList.add('hidden');
+                downloadComplete.classList.add('hidden');
+                convertBtn.disabled = false;
+            }
+
+            function hideError() {
+                errorMessage.style.display = 'none';
+            }
+        });
+    </script>
+</body>
+</html>

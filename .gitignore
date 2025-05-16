@@ -1,0 +1,29 @@
+# Python virtual environment
+venv/
+__pycache__/
+*.py[cod]
+*$py.class
+
+# Environment variables and secrets
+.env
+*.env
+credentials.json
+*_credentials.*
+
+# Temporary files
+*.mp3
+*.mp4
+*.webm
+temp/
+tmp/
+downloads/
+
+# System files
+.DS_Store
+Thumbs.db
+
+# IDE files
+.idea/
+.vscode/
+*.swp
+*.swo
