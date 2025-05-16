@@ -1,0 +1,13 @@
+version: '3'
+
+services:
+  web:
+    build: .
+    ports:
+      - "8086:8086"
+    volumes:
+      - .:/app
+    environment:
+      - FLASK_ENV=development
+      - PORT=8086
+    restart: unless-stopped

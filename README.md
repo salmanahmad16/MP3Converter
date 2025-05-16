@@ -9,8 +9,55 @@ A web application that converts YouTube videos to MP3 files with a clean, modern
 - Simple, ad-free interface
 - Fast conversion process
 - Direct download of converted files
+- Docker support for easy deployment
 
-## Deployment to PythonAnywhere (Free Hosting)
+## Running with Docker (Recommended)
+
+The easiest way to run this application is using Docker, which handles all dependencies and environment setup automatically.
+
+### Prerequisites
+
+- [Docker](https://docs.docker.com/get-docker/)
+- [Docker Compose](https://docs.docker.com/compose/install/) (usually included with Docker Desktop)
+
+### Running the Application
+
+1. Clone this repository:
+   ```
+   git clone https://github.com/salmanahmad16/mp3Converter.git
+   cd mp3Converter
+   ```
+
+2. Build and start the Docker container:
+   ```
+   docker-compose up
+   ```
+
+3. Access the application in your browser at:
+   ```
+   http://localhost:8086
+   ```
+
+4. To stop the application, press `Ctrl+C` in the terminal where docker-compose is running, or run:
+   ```
+   docker-compose down
+   ```
+
+### Building Without Docker Compose
+
+If you prefer not to use Docker Compose:
+
+1. Build the Docker image:
+   ```
+   docker build -t youtube-mp3-converter .
+   ```
+
+2. Run the container:
+   ```
+   docker run -p 8086:8086 youtube-mp3-converter
+   ```
+
+## Alternative Deployment: PythonAnywhere (Free Hosting)
 
 PythonAnywhere offers free hosting for Python web applications without requiring a credit card.
 
