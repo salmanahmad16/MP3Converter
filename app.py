@@ -548,5 +548,5 @@ if __name__ == '__main__':
         print("WARNING: FFmpeg is not installed. Audio conversion will not work.")
         
     # Run the app once with the desired configuration
-    port = int(os.environ.get("PORT", 8086))
+    port = int(os.environ.get("PORT", 5000))
     app.run(host="0.0.0.0", port=port, debug=True)
