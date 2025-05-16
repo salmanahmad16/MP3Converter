@@ -549,4 +549,6 @@ if __name__ == '__main__':
         
     # Run the app once with the desired configuration
     port = int(os.environ.get("PORT", 8086))
-    app.run(host="0.0.0.0", port=port, debug=True)
+    # In production, debug should be False
+    debug_mode = os.environ.get("FLASK_ENV") == "development"
+    app.run(host="0.0.0.0", port=port, debug=debug_mode)
